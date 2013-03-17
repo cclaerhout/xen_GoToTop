@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="Sedo_GoToTop" title="Go To Top !" version_string="1.1.2" version_id="4" url="http://xenforo.com/community/resources/go-to-top.1083/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates>
+    <template title="style_property_unit_GoToTop_Colors"><![CDATA[<input type="hidden" name="checkboxes[]" value="{$property.property_definition_id}" />
+<xen:selectunit name="properties[{$property.property_definition_id}]" value="{$property.propertyValueScalar}" label="{$property.title}">	
+	<xen:option value="ui.totop_black" label="{xen:phrase sedo_gototop_black}" />
+	<xen:option value="ui.totop_white" label="{xen:phrase sedo_gototop_white}" />
+	<xen:option value="ui.totop_red" label="{xen:phrase sedo_gototop_red}" />
+	<xen:option value="ui.totop_green" label="{xen:phrase sedo_gototop_green}" />
+	<xen:option value="ui.totop_blue" label="{xen:phrase sedo_gototop_blue}" />
+	<xen:option value="ui.totop_yellow" label="{xen:phrase sedo_gototop_yellow}" />
+	<xen:option value="ui.totop_purple" label="{xen:phrase sedo_gototop_purple}" />
+	<xen:option value="ui.totop_adaptative" label="{xen:phrase sedo_gototop_adaptative}" />
+	<xen:explain>{$property.description}</xen:explain>
+	<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
+</xen:selectunit>]]></template>
+    <template title="style_property_unit_GoToTop_Easing"><![CDATA[<input type="hidden" name="checkboxes[]" value="{$property.property_definition_id}" />
+<xen:selectunit name="properties[{$property.property_definition_id}]" value="{$property.propertyValueScalar}" label="{$property.title}">	
+	<xen:option value="linear" label="{xen:phrase sedo_gototop_easing_linear}" />
+	<xen:option value="easeInQuad" label="easeInQuad" />
+	<xen:option value="easeInQuad" label="easeInQuad" />
+	<xen:option value="easeOutQuad" label="easeOutQuad" />
+	<xen:option value="easeInOutQuad" label="easeInOutQuad" />
+	<xen:option value="easeInCubic" label="easeInCubic" />
+	<xen:option value="easeOutCubic" label="easeOutCubic" />
+	<xen:option value="easeInOutCubic" label="easeInOutCubic" />
+	<xen:option value="easeInQuart" label="easeInQuart" />
+	<xen:option value="easeOutQuart" label="easeOutQuart" />
+	<xen:option value="easeInOutQuart" label="easeInOutQuart" />
+	<xen:option value="easeInQuint" label="easeInQuint" />
+	<xen:option value="easeOutQuint" label="easeOutQuint" />
+	<xen:option value="easeInOutQuint" label="easeInOutQuint" />
+	<xen:option value="easeInSine" label="easeInSine" />
+	<xen:option value="easeOutSine" label="easeOutSine" />
+	<xen:option value="easeInOutSine" label="easeInOutSine" />
+	<xen:option value="easeInExpo" label="easeInExpo" />
+	<xen:option value="easeOutExpo" label="easeOutExpo" />
+	<xen:option value="easeInOutExpo" label="easeInOutExpo" />
+	<xen:option value="easeInCirc" label="easeInCirc" />
+	<xen:option value="easeOutCirc" label="easeOutCirc" />
+	<xen:option value="easeInOutCirc" label="easeInOutCirc" />
+	<xen:option value="easeInElastic" label="easeInElastic" />
+	<xen:option value="easeOutElastic" label="easeOutElastic" />
+	<xen:option value="easeInOutElastic" label="easeInOutElastic" />
+	<xen:option value="easeInBack" label="easeInBack" />
+	<xen:option value="easeOutBack" label="easeOutBack" />
+	<xen:option value="easeInOutBack" label="easeInOutBack" />
+	<xen:option value="easeInBounce" label="easeInBounce" />
+	<xen:option value="easeOutBounce" label="easeOutBounce" />
+	<xen:explain>{$property.description}</xen:explain>
+	<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
+</xen:selectunit>]]></template>
+    <template title="style_property_unit_GoToTop_Type"><![CDATA[<input type="hidden" name="checkboxes[]" value="{$property.property_definition_id}" />
+<xen:radiounit name="properties[{$property.property_definition_id}]" value="{$property.propertyValueScalar}" label="{$property.title}">	
+	<xen:option value="normal" label="{xen:phrase sedo_gototop_normal}" />
+	<xen:option value="mini" label="{xen:phrase sedo_gototop_mini}" />
+	<xen:explain>{$property.description}</xen:explain>
+	<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
+</xen:radiounit>]]></template>
+    <template title="style_property_unit_GoToTop_Type_Mobile"><![CDATA[<input type="hidden" name="checkboxes[]" value="{$property.property_definition_id}" />
+<xen:radiounit name="properties[{$property.property_definition_id}]" value="{$property.propertyValueScalar}" label="{$property.title}">	
+	<xen:option value="normal" label="{xen:phrase sedo_gototop_normal}" />
+	<xen:option value="mini" label="{xen:phrase sedo_gototop_mini}" />
+	<xen:option value="none" label="{xen:phrase sedo_gototop_none}" />
+	<xen:explain>{$property.description}</xen:explain>
+	<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
+</xen:radiounit>]]></template>
+    <template title="style_property_unit_GoToTop_Type_Tablet"><![CDATA[<input type="hidden" name="checkboxes[]" value="{$property.property_definition_id}" />
+<xen:if is="{$visitor.getBrowser}">
+		<xen:radiounit name="properties[{$property.property_definition_id}]" value="{$property.propertyValueScalar}" label="{$property.title}">	
+			<xen:option value="normal" label="{xen:phrase sedo_gototop_normal}" />
+			<xen:option value="mini" label="{xen:phrase sedo_gototop_mini}" />
+			<xen:option value="none" label="{xen:phrase sedo_gototop_none}" />
+			<xen:explain>{$property.description}</xen:explain>
+			<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
+		</xen:radiounit>
+<xen:else />
+	<xen:radiounit name="properties[{$property.property_definition_id}]" value="{$property.propertyValueScalar}" label="{$property.title}">	
+		<xen:option value="error" label="{xen:phrase sedo_gototop_notavailable}" />
+		<xen:explain>{$property.description}</xen:explain>
+		<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
+	</xen:radiounit>
+</xen:if>]]></template>
+  </admin_templates>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="template_hook" execute_order="10" callback_class="Sedo_GoToTop_Listener_Templates" callback_method="hookme" active="1" description="Template Hook - Footer"/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="sedo_gototop" version_id="0" version_string="1.0"><![CDATA[Go to Top]]></phrase>
+    <phrase title="sedo_gototop_adaptative" version_id="0" version_string="1.0"><![CDATA[Chameleon]]></phrase>
+    <phrase title="sedo_gototop_black" version_id="0" version_string="1.0"><![CDATA[Black]]></phrase>
+    <phrase title="sedo_gototop_blue" version_id="0" version_string="1.0"><![CDATA[Blue]]></phrase>
+    <phrase title="sedo_gototop_easing_linear" version_id="0" version_string="1.0"><![CDATA[Linear]]></phrase>
+    <phrase title="sedo_gototop_green" version_id="0" version_string="1.0"><![CDATA[Green]]></phrase>
+    <phrase title="sedo_gototop_mini" version_id="0" version_string="1.0"><![CDATA[Mini]]></phrase>
+    <phrase title="sedo_gototop_none" version_id="1" version_string="1.0.1"><![CDATA[None]]></phrase>
+    <phrase title="sedo_gototop_normal" version_id="0" version_string="1.0"><![CDATA[Normal]]></phrase>
+    <phrase title="sedo_gototop_notavailable" version_id="2" version_string="1.1"><![CDATA[Not available]]></phrase>
+    <phrase title="sedo_gototop_purple" version_id="0" version_string="1.0"><![CDATA[Purple]]></phrase>
+    <phrase title="sedo_gototop_red" version_id="0" version_string="1.0"><![CDATA[Red]]></phrase>
+    <phrase title="sedo_gototop_white" version_id="0" version_string="1.0"><![CDATA[White]]></phrase>
+    <phrase title="sedo_gototop_yellow" version_id="0" version_string="1.0"><![CDATA[Yellow]]></phrase>
+    <phrase title="style_property_gototopActivate_description_master" version_id="0" version_string="1.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_gototopActivate_master" version_id="0" version_string="1.0"><![CDATA[Activate the 'Go To Top!' button?]]></phrase>
+    <phrase title="style_property_gototopColor_description_master" version_id="0" version_string="1.0"><![CDATA[Choose the color of the button 'Go To Top']]></phrase>
+    <phrase title="style_property_gototopColor_master" version_id="0" version_string="1.0"><![CDATA['Go To Top !' Button Color]]></phrase>
+    <phrase title="style_property_gototopEasing_description_master" version_id="0" version_string="1.0"><![CDATA[Choose which 'Easing' effect the AutoScroll should use]]></phrase>
+    <phrase title="style_property_gototopEasing_master" version_id="0" version_string="1.0"><![CDATA['Go To Top !' Easing AutoScroll Effect]]></phrase>
+    <phrase title="style_property_gototopInDelay_description_master" version_id="1" version_string="1.0.1"><![CDATA[Default is 600 (milliseconds) -  Time the button will spend to display with fading]]></phrase>
+    <phrase title="style_property_gototopInDelay_master" version_id="0" version_string="1.0"><![CDATA[In Delay]]></phrase>
+    <phrase title="style_property_gototopMin_description_master" version_id="1" version_string="1.0.1"><![CDATA[Default is 200 (px). When the scrollbar will reach that value from the top screen, the button will then appear.]]></phrase>
+    <phrase title="style_property_gototopMin_master" version_id="1" version_string="1.0.1"><![CDATA[Minimum Height]]></phrase>
+    <phrase title="style_property_gototopOutDelay_description_master" version_id="1" version_string="1.0.1"><![CDATA[Default is 400 (milliseconds) - Time the button will spend to disappear with fading]]></phrase>
+    <phrase title="style_property_gototopOutDelay_master" version_id="0" version_string="1.0"><![CDATA[Out Delay]]></phrase>
+    <phrase title="style_property_gototopScrollSpeed_description_master" version_id="2" version_string="1.1"><![CDATA[Default is 800 (milliseconds) - Higher the value will be, the  longer you will have to wait for the scrollbar to reach the top]]></phrase>
+    <phrase title="style_property_gototopScrollSpeed_master" version_id="0" version_string="1.0"><![CDATA[Scroll Speed]]></phrase>
+    <phrase title="style_property_gototopTypeMobile_description_master" version_id="2" version_string="1.1"><![CDATA[Choose which type the button 'Go To Top' should use on mobile devices (phones, tablets, etc.). Recommended option: 'none' (it doesn't seem to work well on some devices).]]></phrase>
+    <phrase title="style_property_gototopTypeMobile_master" version_id="1" version_string="1.0.1"><![CDATA['Go To Top !' Button Type (mobile devices)]]></phrase>
+    <phrase title="style_property_gototopTypeTablet_description_master" version_id="2" version_string="1.1"><![CDATA[Choose which type the button 'Go To Top' should use on tablet devices. If the option is not available, you will need to install an external addon named "Browser Detection (Mobile/MSIE)".]]></phrase>
+    <phrase title="style_property_gototopTypeTablet_master" version_id="1" version_string="1.0.1"><![CDATA['Go To Top !' Button Type (tablet devices)]]></phrase>
+    <phrase title="style_property_gototopType_description_master" version_id="0" version_string="1.0"><![CDATA[Choose which type the button 'Go To Top' should use]]></phrase>
+    <phrase title="style_property_gototopType_master" version_id="1" version_string="1.0.1"><![CDATA['Go To Top !' Button Type (normal devices)]]></phrase>
+    <phrase title="style_property_group_GoToTop_master" version_id="1" version_string="1.0.1"><![CDATA[Go To Top!]]></phrase>
+    <phrase title="style_property_group_GoToTop_master_desc" version_id="1" version_string="1.0.1"><![CDATA[Go To Top! Configuration]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties>
+    <property property_name="gototopColor" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Button Color" description="Choose the color of the button 'Go To Top'" css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Colors" display_order="130" sub_group="gototop"><![CDATA[ui.totop_adaptative]]></property>
+    <property property_name="gototopType" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Button Type (normal devices)" description="Choose which type the button 'Go To Top' should use" css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Type" display_order="120" sub_group="gototop"><![CDATA[normal]]></property>
+    <property property_name="gototopEasing" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Easing AutoScroll Effect" description="Choose which 'Easing' effect the AutoScroll should use" css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Easing" display_order="140" sub_group="gototop"><![CDATA[easeInOutQuad]]></property>
+    <property property_name="gototopActivate" property_type="scalar" definition="1" group_name="GoToTop" title="Activate the 'Go To Top!' button?" description="" css_components="" scalar_type="boolean" scalar_parameters="" display_order="110" sub_group="gototop"><![CDATA[0]]></property>
+    <property property_name="gototopScrollSpeed" property_type="scalar" definition="1" group_name="GoToTop" title="Scroll Speed" description="Default is 800 (milliseconds) - Higher the value will be, the  longer you will have to wait for the scrollbar to reach the top" css_components="" scalar_type="number" scalar_parameters="" display_order="150" sub_group="gototop"><![CDATA[800]]></property>
+    <property property_name="gototopMin" property_type="scalar" definition="1" group_name="GoToTop" title="Minimum Height" description="Default is 200 (px). When the scrollbar will reach that value from the top screen, the button will then appear." css_components="" scalar_type="number" scalar_parameters="" display_order="160" sub_group="gototop"><![CDATA[200]]></property>
+    <property property_name="gototopInDelay" property_type="scalar" definition="1" group_name="GoToTop" title="In Delay" description="Default is 600 (milliseconds) -  Time the button will spend to display with fading" css_components="" scalar_type="number" scalar_parameters="" display_order="170" sub_group="gototop"><![CDATA[600]]></property>
+    <property property_name="gototopOutDelay" property_type="scalar" definition="1" group_name="GoToTop" title="Out Delay" description="Default is 400 (milliseconds) - Time the button will spend to disappear with fading" css_components="" scalar_type="number" scalar_parameters="" display_order="180" sub_group="gototop"><![CDATA[400]]></property>
+    <property property_name="gototopTypeMobile" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Button Type (mobile devices)" description="Choose which type the button 'Go To Top' should use on mobile devices (phones, tablets, etc.). Recommended option: 'none' (it doesn't seem to work well on some devices)." css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Type_Mobile" display_order="121" sub_group="gototop"><![CDATA[none]]></property>
+    <property property_name="gototopTypeTablet" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Button Type (tablet devices)" description="Choose which type the button 'Go To Top' should use on tablet devices. If the option is not available, you will need to install an external addon named &quot;Browser Detection (Mobile/MSIE)&quot;." css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Type_Tablet" display_order="122" sub_group="gototop"><![CDATA[error]]></property>
+    <group group_name="GoToTop" display_order="9999">
+      <title>Go To Top!</title>
+      <description>Go To Top! Configuration</description>
+    </group>
+  </style_properties>
+  <templates>
+    <template title="GoToTop" version_id="2" version_string="1.1"><![CDATA[<xen:edithint template="GoToTop_normal.css" />
+<xen:edithint template="GoToTop_mini.css" />
+
+<xen:if is="{$GttType} == 'normal'">
+	<xen:require css="GoToTop_normal.css" />
+<xen:else />
+	<xen:require css="GoToTop_mini.css" />
+</xen:if> 
+
+<script type="text/javascript" src="{$javaScriptSource}/sedo/gototop/xen.ui.totop.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$().UItoTop({ 
+			text: "{xen:jsescape {xen:phrase sedo_gototop}}", 
+			easingType: "{xen:property gototopEasing}", 
+			containerID: "toTop{$browser}",
+			containerHoverID: "toTopHover{$GttBrowser}",
+			scrollSpeed: {xen:property gototopScrollSpeed},
+			min: {xen:property gototopMin},
+			inDelay: {xen:property gototopInDelay},
+    			outDelay: {xen:property gototopOutDelay}
+		});
+	});
+</script>]]></template>
+    <template title="GoToTop_mini.css" version_id="2" version_string="1.1"><![CDATA[#toTop {
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:27px;
+	height:26px;
+	border:none;
+	text-indent:100%;
+	background:url(styles/sedo/toTop/{xen:property gototopColor}\_mini.png) no-repeat left top;
+}
+
+#toTopHover {
+	background:url(styles/sedo/toTop/{xen:property gototopColor}\_mini.png) no-repeat left -26px;
+	width:27px;
+	height:26px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+#toTop:active, #toTop:focus {
+	outline:none;
+}
+
+#toTopIE {
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:27px;
+	height:25px;
+	border:none;
+	text-indent:100%;
+	background:url(styles/sedo/toTop/ui.totop_ie_mini.png) no-repeat left top;
+}
+
+#toTopHoverIE {
+	background:url(styles/sedo/toTop/ui.totop_ie_mini.png) no-repeat left -25px;
+	width:27px;
+	height:25px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+#toTopIE:active, #toTopIE:focus {
+	outline:none;
+}]]></template>
+    <template title="GoToTop_normal.css" version_id="0" version_string="1.0"><![CDATA[#toTop {
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:53px;
+	height:52px;
+	border:none;
+	text-indent:100%;
+	background:url(styles/sedo/toTop/{xen:property gototopColor}\.png) no-repeat left top;
+}
+
+#toTopHover {
+	background:url(styles/sedo/toTop/{xen:property gototopColor}\.png) no-repeat left -52px;
+	width:53px;
+	height:52px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+#toTop:active, #toTop:focus {
+	outline:none;
+}
+
+#toTopIE {
+	display:none;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	overflow:hidden;
+	width:53px;
+	height:52px;
+	border:none;
+	text-indent:100%;
+	background:url(styles/sedo/toTop/ui.totop_ie.png) no-repeat left top;
+}
+
+#toTopHoverIE {
+	background:url(styles/sedo/toTop/ui.totop_ie.png) no-repeat left -52px;
+	width:53px;
+	height:52px;
+	display:block;
+	overflow:hidden;
+	float:left;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+#toTopIE:active, #toTopIE:focus {
+	outline:none;
+}]]></template>
+  </templates>
+  <bb_code_media_sites/>
+  <template_modifications/>
+</addon>
