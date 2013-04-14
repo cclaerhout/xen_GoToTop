@@ -13,6 +13,8 @@
 	<xen:option value="ui.totop_blue" label="{xen:phrase sedo_gototop_blue}" />
 	<xen:option value="ui.totop_yellow" label="{xen:phrase sedo_gototop_yellow}" />
 	<xen:option value="ui.totop_purple" label="{xen:phrase sedo_gototop_purple}" />
+	<xen:option value="ui.totop_orange" label="{xen:phrase sedo_gototop_orange}" />
+	<xen:option value="ui.totop_darkorange" label="{xen:phrase sedo_gototop_darkorange}" />
 	<xen:option value="ui.totop_adaptative" label="{xen:phrase sedo_gototop_adaptative}" />
 	<xen:explain>{$property.description}</xen:explain>
 	<xen:html><xen:include template="style_property_unit_extra"><xen:set var="$reset">{xen:phrase reset}</xen:set></xen:include></xen:html>
@@ -109,6 +111,8 @@
     <phrase title="sedo_gototop_normal" version_id="0" version_string="1.0"><![CDATA[Normal]]></phrase>
     <phrase title="sedo_gototop_notavailable" version_id="2" version_string="1.1"><![CDATA[Not available]]></phrase>
     <phrase title="sedo_gototop_purple" version_id="0" version_string="1.0"><![CDATA[Purple]]></phrase>
+    <phrase title="sedo_gototop_orange" version_id="0" version_string="1.0"><![CDATA[Orange]]></phrase>
+    <phrase title="sedo_gototop_darkorange" version_id="0" version_string="1.0"><![CDATA[Dark Orange]]></phrase>
     <phrase title="sedo_gototop_red" version_id="0" version_string="1.0"><![CDATA[Red]]></phrase>
     <phrase title="sedo_gototop_white" version_id="0" version_string="1.0"><![CDATA[White]]></phrase>
     <phrase title="sedo_gototop_yellow" version_id="0" version_string="1.0"><![CDATA[Yellow]]></phrase>
