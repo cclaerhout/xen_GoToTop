@@ -113,7 +113,7 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 			.mouseout(function(){
 				$(this).data('scrollTimer', getTimeout());
 			})
-			.show(function(){
+			.on('show', function(){
 				qmDependency();
 			});
 
