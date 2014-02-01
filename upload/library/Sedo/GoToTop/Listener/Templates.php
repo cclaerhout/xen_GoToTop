@@ -1,29 +1,19 @@
 <?php
 class Sedo_GoToTop_Listener_Templates
 {
-	public static function hookme($hookName, &$contents, array $hookParams, XenForo_Template_Abstract $template)
+	public static function goToTop(&$templateName, array &$params, XenForo_Template_Abstract $template)
 	{
-		switch ($hookName) {
-			case 'footer':
-				//Check if activate
-				$activate = XenForo_Template_Helper_Core::styleProperty('gototopActivate'); 
-				
-				if( $activate != true)
-				{
-					break;	
-				}
-	
-	
+		switch ($templateName) {
+			case 'PAGE_CONTAINER':
 				//Init
 				$visitor = XenForo_Visitor::getInstance();
-				$hookParams['GttBrowser'] = '';
+				$GttBrowser = '';
 				
 	
 	      			// Type: Normal/Mini/(None)
-	      			$hookParams['GttType'] = XenForo_Template_Helper_Core::styleProperty('gototopType');				
-	      			$TypeMobile = XenForo_Template_Helper_Core::styleProperty('gototopTypeMobile');
-	      			$TypeTablet = XenForo_Template_Helper_Core::styleProperty('gototopTypeTablet');	
-	
+	      			$GttType = XenForo_Template_Helper_Core::styleProperty('gototopType');				
+	      			$typeMobile = XenForo_Template_Helper_Core::styleProperty('gototopTypeMobile');
+	      			$typeTablet = XenForo_Template_Helper_Core::styleProperty('gototopTypeTablet');	
 	
 	  			//External Addon
 	      			if( class_exists('Sedo_DetectBrowser_Listener_Visitor') && isset($visitor->getBrowser))
@@ -31,29 +21,29 @@ class Sedo_GoToTop_Listener_Templates
 					//Check if mobile and not tablet
 	      				if($visitor->getBrowser['isMobile'] && !$visitor->getBrowser['isTablet'] )
 	      				{
-	      					if($TypeMobile == 'none')
+	      					if($typeMobile == 'none')
 	      					{
 	      						break;
 	      					}
 	      					
-	      					$hookParams['GttType'] = $TypeMobile;
+	      					$GttType = $typeMobile;
 	      				}
 	      				
 					//Check if tablet     				
 	      				if( $visitor->getBrowser['isTablet'] )
 	      				{
-	      					 if( in_array($TypeTablet, array('none', 'error')) )
+	      					 if( in_array($typeTablet, array('none', 'error')) )
 	      					 {
 	      					 	break;
 	      					 }
 	
-	      					$hookParams['GttType'] = $TypeTablet;
+	      					$GttType = $typeTablet;
 	      				}
 	
 					//Check if IE6
 					if($visitor->getBrowser['IEis'] == 6)
 	        			{
-	  	      				$hookParams['GttBrowser'] = 'IE';      			
+	  	      				$GttBrowser = 'IE';      			
 	        			}
 	      			}
 	      			else
@@ -61,12 +51,12 @@ class Sedo_GoToTop_Listener_Templates
 	      				//XenForo Mobile
 	      				if(XenForo_Visitor::isBrowsingWith('mobile'))
 	      				{
-	      					if($TypeMobile == 'none')
+	      					if($typeMobile == 'none')
 	      					{
 	      						break;
 	      					}
 	
-	      					$hookParams['GttType'] = $TypeMobile;
+	      					$GttType = $typeMobile;
 	      				}
 					
 					//IE6 self function
@@ -74,14 +64,16 @@ class Sedo_GoToTop_Listener_Templates
 	
 		      			if($checkIE6 === true)
 		      			{
-		      				$hookParams['GttBrowser'] = 'IE';
+		      				$GttBrowser = 'IE';
 		      			}
 	      			}
+
+				$extraParams['goToTop'] = array(
+					'type' => $GttType,
+					'browser' => $GttBrowser
+				);
 	      
-	      			$mergedParams = array_merge($template->getParams(), $hookParams);
-	
-	      			$contents .= $template->create('GoToTop', $mergedParams );
-				
+	      			$params += $extraParams;
 			break;
 		}
 	}
@@ -97,6 +89,11 @@ class Sedo_GoToTop_Listener_Templates
 
 	public static function isBadIE($method = false, $range = false)
 	{
+		if(!isset($_SERVER['HTTP_USER_AGENT']))
+		{
+			return false;
+		}
+
 		$useragent = $_SERVER['HTTP_USER_AGENT'];
 		$output = false;
 
