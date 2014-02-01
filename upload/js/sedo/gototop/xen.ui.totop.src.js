@@ -79,6 +79,7 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 			/* Qm extension */
 			if(!qmEnable){
 				$qmEl.remove();
+				settings.text = $e.html();
 			}else{
 				$qmTrigger.on('click', qmDependency);
 			}
