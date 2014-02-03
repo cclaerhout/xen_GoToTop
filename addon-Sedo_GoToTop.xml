@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<addon addon_id="Sedo_GoToTop" title="Go To Top !" version_string="2.1.0" version_id="6" url="http://xenforo.com/community/resources/go-to-top.1083/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="Sedo_GoToTop" title="Go To Top !" version_string="2.1.1" version_id="7" url="http://xenforo.com/community/resources/go-to-top.1083/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -463,7 +463,7 @@
     <modification template="footer" modification_key="sedo_gototop_footer" description="Add GoToTop to footer" execution_order="10" enabled="1" action="preg_replace">
       <find><![CDATA[#^.*?$#si]]></find>
       <replace><![CDATA[$0
-<xen:if is="{xen:property gototopActivate}">
+<xen:if is="{xen:property gototopActivate} AND {$goToTop}">
 	<xen:include template="GoToTop" />
 </xen:if>]]></replace>
     </modification>
