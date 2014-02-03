@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<addon addon_id="Sedo_GoToTop" title="Go To Top !" version_string="2.0.0" version_id="5" url="http://xenforo.com/community/resources/go-to-top.1083/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="Sedo_GoToTop" title="Go To Top !" version_string="2.1.0" version_id="6" url="http://xenforo.com/community/resources/go-to-top.1083/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -147,6 +147,10 @@
     <phrase title="style_property_gototopTypeTablet_master" version_id="1" version_string="1.0.1"><![CDATA['Go To Top !' Button Type (tablet devices)]]></phrase>
     <phrase title="style_property_gototopType_description_master" version_id="0" version_string="1.0"><![CDATA[Choose which type the button 'Go To Top' should use]]></phrase>
     <phrase title="style_property_gototopType_master" version_id="1" version_string="1.0.1"><![CDATA['Go To Top !' Button Type (normal devices)]]></phrase>
+    <phrase title="style_property_gototop_pos_bottom_description_master" version_id="5" version_string="2.0.0"><![CDATA[To make it vertical-align to the screen, just use 50%. Default value: 10px.]]></phrase>
+    <phrase title="style_property_gototop_pos_bottom_master" version_id="5" version_string="2.0.0"><![CDATA[Block bottom position]]></phrase>
+    <phrase title="style_property_gototop_pos_left_right_description_master" version_id="5" version_string="2.0.0"><![CDATA[To make it vertical-align to the screen, just use 50%. Default value: 10px.]]></phrase>
+    <phrase title="style_property_gototop_pos_left_right_master" version_id="5" version_string="2.0.0"><![CDATA[Block right position]]></phrase>
     <phrase title="style_property_group_GoToTop_master" version_id="1" version_string="1.0.1"><![CDATA[Go To Top!]]></phrase>
     <phrase title="style_property_group_GoToTop_master_desc" version_id="1" version_string="1.0.1"><![CDATA[Go To Top! Configuration]]></phrase>
     <phrase title="style_property_sedo_gototop_purecss_description_master" version_id="4" version_string="1.1.2"><![CDATA[]]></phrase>
@@ -176,7 +180,7 @@
     <property property_name="gototopOutDelay" property_type="scalar" definition="1" group_name="GoToTop" title="Out Delay" description="Default is 400 (milliseconds) - Time the button will spend to disappear with fading" css_components="" scalar_type="number" scalar_parameters="" display_order="180" sub_group="settings"><![CDATA[400]]></property>
     <property property_name="gototopTypeMobile" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Button Type (mobile devices)" description="Choose which type the button 'Go To Top' should use on mobile devices (phones, tablets, etc.). Recommended option: 'none' (it doesn't seem to work well on some devices)." css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Type_Mobile" display_order="121" sub_group="button"><![CDATA[none]]></property>
     <property property_name="gototopTypeTablet" property_type="scalar" definition="1" group_name="GoToTop" title="'Go To Top !' Button Type (tablet devices)" description="Choose which type the button 'Go To Top' should use on tablet devices. If the option is not available, you will need to install an external addon named &quot;Browser Detection (Mobile/MSIE)&quot;." css_components="" scalar_type="template" scalar_parameters="style_property_unit_GoToTop_Type_Tablet" display_order="122" sub_group="button"><![CDATA[0]]></property>
-    <property property_name="sedo_gototop_purecss" property_type="css" definition="1" group_name="GoToTop" title="Pure css" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group="purecss"><![CDATA[{"background-color":"@primaryLighterStill","border-radius":"10px","color":"@primaryDark","extra":"display: none;\nposition: fixed;\nbottom: 10px;\nright: 10px;\noverflow: hidden;\ncursor: pointer;\nbox-shadow: 0 0 3px 1px @primaryLighter;\nopacity: 0.92;\nz-index: 90;","font-size":"27px","height":"52px","text-decoration":{"none":"none"},"width":"53px"}]]></property>
+    <property property_name="sedo_gototop_purecss" property_type="css" definition="1" group_name="GoToTop" title="Pure css" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group="purecss"><![CDATA[{"background-color":"@primaryLighterStill","border-radius":"10px","color":"@primaryDark","extra":"display: none;\nposition: fixed;\noverflow: hidden;\ncursor: pointer;\nbox-shadow: 0 0 3px 1px @primaryLighter;\nopacity: 0.92;\nz-index: 90;","font-size":"27px","height":"52px","text-decoration":{"none":"none"},"width":"53px"}]]></property>
     <property property_name="sedo_gototop_purecss_hover" property_type="css" definition="1" group_name="GoToTop" title="Pure css (hover)" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group="purecss"><![CDATA[{"background-color":"@primaryDark","color":"@primaryMedium","extra":"display: block;\nposition: absolute;\noverflow: hidden;\nfloat: left;\nopacity: 0;"}]]></property>
     <property property_name="sedo_gototop_purecss_mini" property_type="css" definition="1" group_name="GoToTop" title="Pure css mini" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group="purecss"><![CDATA[{"border-radius":"5px","font-size":"13px","height":"26px","width":"27px"}]]></property>
     <property property_name="sedo_gototop_purecss_updown_item" property_type="css" definition="1" group_name="GoToTop" title="Pure css - Up/Down - Hover item" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="40" sub_group="purecss"><![CDATA[{"background-color":"@primaryLighterStill"}]]></property>
@@ -186,6 +190,8 @@
     <property property_name="sedo_gototop_purecss_updown_qm" property_type="css" definition="1" group_name="GoToTop" title="Pure css - Up/Down - Qm" description="Quote Me menu - normal state" css_components="text,background,layout,extra" scalar_type="" scalar_parameters="" display_order="50" sub_group=""><![CDATA[{"font-size":"15px","font-style":"italic"}]]></property>
     <property property_name="sedo_gototop_purecss_updown_qm_act" property_type="css" definition="1" group_name="GoToTop" title="Pure css - Up/Down - Qm (active)" description="Quote Me menu - active state" css_components="text,background,layout,extra" scalar_type="" scalar_parameters="" display_order="60" sub_group=""><![CDATA[{"background-color":"@inlineMod"}]]></property>
     <property property_name="sedo_gototop_purecss_ud_qm_mini" property_type="css" definition="1" group_name="GoToTop" title="Pure css - Up/Down - Qm Mini" description="" css_components="text,background,layout,extra" scalar_type="" scalar_parameters="" display_order="55" sub_group=""><![CDATA[{"font-size":"9px"}]]></property>
+    <property property_name="gototop_pos_bottom" property_type="scalar" definition="1" group_name="GoToTop" title="Block bottom position" description="To make it vertical-align to the screen, just use 50%. Default value: 10px." css_components="" scalar_type="number" scalar_parameters="" display_order="137" sub_group="pos"><![CDATA[10px]]></property>
+    <property property_name="gototop_pos_left_right" property_type="scalar" definition="1" group_name="GoToTop" title="Block right position" description="To make it vertical-align to the screen, just use 50%. Default value: 10px." css_components="" scalar_type="number" scalar_parameters="" display_order="138" sub_group="pos"><![CDATA[10px]]></property>
     <group group_name="GoToTop" display_order="9999">
       <title>Go To Top!</title>
       <description>Go To Top! Configuration</description>
@@ -226,12 +232,10 @@
 	</xen:if>
 	</div>
 ]]></template>
-    <template title="GoToTop_mini.css" version_id="4" version_string="1.1.2"><![CDATA[#toTop {
+    <template title="GoToTop_mini.css" version_id="5" version_string="2.0.0"><![CDATA[#toTop {
 	display:none;
 	text-decoration:none;
 	position:fixed;
-	bottom:10px;
-	right:10px;
 	overflow:hidden;
 	width:27px;
 	height:26px;
@@ -240,6 +244,8 @@
 	background:url(styles/sedo/toTop/{xen:property gototopColor}\_mini.png) no-repeat left top;
 	z-index: 90;
 	cursor:pointer;	
+	bottom: {xen:property gototop_pos_bottom};
+	right: {xen:property gototop_pos_left_right};	
 }
 
 #toTopHover {
@@ -287,12 +293,10 @@
 #toTopIE:active, #toTopIE:focus {
 	outline:none;
 }]]></template>
-    <template title="GoToTop_normal.css" version_id="4" version_string="1.1.2"><![CDATA[#toTop {
+    <template title="GoToTop_normal.css" version_id="5" version_string="2.0.0"><![CDATA[#toTop {
 	display:none;
 	text-decoration:none;
 	position:fixed;
-	bottom:10px;
-	right:10px;
 	overflow:hidden;
 	width:53px;
 	height:52px;
@@ -301,6 +305,8 @@
 	background:url(styles/sedo/toTop/{xen:property gototopColor}\.png) no-repeat left top;
 	z-index: 90;
 	cursor:pointer;	
+	bottom: {xen:property gototop_pos_bottom};
+	right: {xen:property gototop_pos_left_right};		
 }
 
 #toTopHover {
@@ -352,12 +358,16 @@
 #sedo_gototop{
 	display:none;
 }]]></template>
-    <template title="GoToTop_purecss.css" version_id="4" version_string="1.1.2"><![CDATA[<xen:set var="$liDiv">{xen:if "{xen:property gototopQm}", 3, 2}</xen:set>
+    <template title="GoToTop_purecss.css" version_id="5" version_string="2.0.0"><![CDATA[<xen:set var="$liDiv">{xen:if "{xen:property gototopQm}", 3, 2}</xen:set>
 
 .SedoGoToTop {
 	{xen:property sedo_gototop_purecss}
 	height: auto;
+	bottom: {xen:property gototop_pos_bottom};
+	right: {xen:property gototop_pos_left_right};	
 }
+
+
 
 .SedoGoToTop.mini {
 	{xen:property sedo_gototop_purecss_mini}

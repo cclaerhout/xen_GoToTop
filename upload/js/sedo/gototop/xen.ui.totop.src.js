@@ -78,8 +78,14 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 
 			/* Qm extension */
 			if(!qmEnable){
+				var $li = $e.find('li'),
+					liCoeff = $li.length,
+					liHeight = parseInt($li.css('height')),
+					liHeightFix = (liHeight+liHeight/liCoeff)+'px';
+
 				$qmEl.remove();
-				settings.text = $e.html();
+				$li.css({height: liHeightFix, lineHeight: liHeightFix});
+				settings.text = $e.html();				
 			}else{
 				$qmTrigger.on('click', qmDependency);
 			}
