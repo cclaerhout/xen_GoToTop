@@ -22,6 +22,8 @@ if(typeof Sedo === 'undefined') var Sedo = {};
     				outDelay: $e.data('outdelay'),
     				adv: parseInt($e.data('adv')),
     				timeout: parseInt($e.data('timeout')),
+    				bottomDelta: $e.data('bottomDelta') || 0,
+    				topDelta: $e.data('topDelta') || 0,    				
 			},
 			containerIDhash = '#' + settings.containerID,
 			containerHoverIDHash = '#'+settings.containerHoverID,
@@ -39,7 +41,11 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 			};
 			
 			var scrollTo = function(where){
-				var pos = (where == 'bottom') ? $(document).height() : 0;
+				var pos = (where == 'bottom') ? 
+					$(document).height() - $(window).height() - parseInt(settings.bottomDelta) 
+					:
+					0 + parseInt(settings.topDelta);
+
 				$('html, body').animate({scrollTop:pos}, {
 						duration: settings.scrollSpeed, 
 						easing: settings.easingType,
