@@ -23,7 +23,8 @@ if(typeof Sedo === 'undefined') var Sedo = {};
     				adv: parseInt($e.data('adv')),
     				timeout: parseInt($e.data('timeout')),
     				bottomDelta: $e.data('bottomDelta') || 0,
-    				topDelta: $e.data('topDelta') || 0,    				
+    				topDelta: $e.data('topDelta') || 0,
+    				parentWidthMode: $e.hasClass('ParentWidthMode')
 			},
 			containerIDhash = '#' + settings.containerID,
 			containerHoverIDHash = '#'+settings.containerHoverID,
@@ -32,6 +33,16 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 			qmEnable = ($qmTrigger.is(':visible'));
 			
 			/* Functions libraries */
+			var pageWidthDelta = null;
+			var adjustToPageWidth = function(){
+				var $pageWidth = $('.pageWidth'),
+					targetVal = ($('html').attr('dir') == 'LTR') ? 'right' : 'left',
+					pos = (targetVal == 'right') ? $(window).width() - ($pageWidth.offset().left + $pageWidth.outerWidth()) : $pageWidth.offset().left;
+				
+				pageWidthDelta = (pageWidthDelta === null) ? parseInt($e.css(targetVal)) : pageWidthDelta;
+				$e.css(targetVal, pos+pageWidthDelta);
+			}
+			
 			var makeMeFadeOut = function(){
 				$(containerIDhash).fadeOut(settings.Outdelay);
 			};
@@ -129,7 +140,7 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 				qmDependency();
 			});
 
-			/* Scroll management */						
+			/* Scroll management */
 			$(window).scroll(function() {
 				var sd = $(window).scrollTop();
 				if(typeof document.body.style.maxHeight === "undefined") {
@@ -146,7 +157,13 @@ if(typeof Sedo === 'undefined') var Sedo = {};
 				
 				clearTimeout($(containerIDhash).data('scrollTimer'));
 				$(containerIDhash).data('scrollTimer', getTimeout());
-			});			
+			});
+			
+			/* ParentWidth Mode */
+			if(settings.parentWidthMode){
+				adjustToPageWidth(1);
+				$(window).on('resize', adjustToPageWidth);
+			}
 		}
 	}
 
